@@ -1,0 +1,18 @@
+1.use my_first_db
+
+2.db.createCollection("students")
+
+3.db.students.insert({name: "Siddharth", home_state: "Pune", lucky_number: 35, birthday: {month: 07, day: 09, year: 1984}})
+
+
+4.db.students.find( { $or: [ { home_state: "Bagalkot" }, { home_state:"Goa" } ] }).pretty()
+
+5.db.students.find( { $or: [ { home_state: "Bagalkot" }, { home_state:"Goa" } ] }).pretty()
+
+6.db.students.find({ $and: [ { lucky_number: { $gt: 11 } }, { lucky_number: { $lt: 35 } } ] } )
+
+7.db.students.update({}, {$set: {interests: ['brunch','coding','MongoDB']}},{multi:true})
+
+8.db.students.update({_id: ObjectId("58c8735b6d36172fbb5420d7")}, {$push: {interests: 'snowboarding'}})
+
+9.db.students.update({_id: ObjectId("58c8735b6d36172fbb5420d7")}, {$pop: {interests: 'snowboarding'}})
